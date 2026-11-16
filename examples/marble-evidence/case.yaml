@@ -1,0 +1,97 @@
+# Editable case inputs for the published marble example.
+id: E3
+scope: "Inventory N1 / stable weighing record O1–O3"
+parameters:
+  maxIncorrectReports: 1
+basis:
+  inventory:
+    - id: N1
+  bag:
+    - id: red
+      label: Red
+    - id: blue
+      label: Blue
+    - id: gold
+      label: Gold
+  marble:
+    - id: r1
+      bag: red
+      inventory: N1
+    - id: r2
+      bag: red
+      inventory: N1
+    - id: r3
+      bag: red
+      inventory: N1
+    - id: b1
+      bag: blue
+      inventory: N1
+    - id: b2
+      bag: blue
+      inventory: N1
+    - id: b3
+      bag: blue
+      inventory: N1
+    - id: g1
+      bag: gold
+      inventory: N1
+    - id: g2
+      bag: gold
+      inventory: N1
+    - id: g3
+      bag: gold
+      inventory: N1
+  outcome:
+    - id: left
+    - id: right
+    - id: balanced
+  setup:
+    - id: W0
+      inventory: N1
+    - id: W1
+      inventory: N1
+  pan:
+    - setup: W0
+      marble: r1
+      side: left
+    - setup: W0
+      marble: r2
+      side: left
+    - setup: W0
+      marble: r3
+      side: left
+    - setup: W0
+      marble: b1
+      side: right
+    - setup: W0
+      marble: b2
+      side: right
+    - setup: W0
+      marble: b3
+      side: right
+    - setup: W1
+      marble: r1
+      side: left
+    - setup: W1
+      marble: r2
+      side: right
+evidence:
+  observation:
+    - id: O1
+      setup: W0
+      inventory: N1
+      reported: left
+    - id: O2
+      setup: W0
+      inventory: N1
+      reported: right
+    - id: O3
+      setup: W0
+      inventory: N1
+      reported: left
+queryIds: [containing-bag, heavy-marble]
+evaluation:
+  maxCandidates: 10000
+  maxRuleRounds: 100
+  maxFacts: 50000
+

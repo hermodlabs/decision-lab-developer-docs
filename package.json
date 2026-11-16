@@ -1,0 +1,21 @@
+{
+  "name": "decision-lab-developer-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public Decision Lab SDK and CLI documentation and runnable consumer examples.",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "example:evidence:sdk": "node examples/marble-evidence/sdk.mjs",
+    "example:evidence:cli": "sh examples/marble-evidence/cli.sh",
+    "example:learning:sdk": "node examples/marble-learning/sdk.mjs",
+    "example:learning:cli": "sh examples/marble-learning/cli.sh",
+    "check:docs": "node scripts/check-links.mjs",
+    "verify": "npm run check:docs && node examples/verify.mjs"
+  },
+  "dependencies": {
+    "@decision-lab/sdk": "0.1.0",
+    "@decision-lab/cli": "0.1.0"
+  }
+}

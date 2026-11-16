@@ -1,0 +1,348 @@
+# Editable case inputs for the published marble example.
+id: MARBLE-LEARNING-E3
+scope: "Inventory N1; reviewed E3 state basis; prospective services apply to this same fixed heavy identity."
+currentTime: 0
+cashBudget: null
+probabilityBasis:
+  source: "Stipulated teaching assessment conditional on E3; not inferred from the historical error bound or admissible-state count."
+  scope: "N1:E3:prospective-1"
+priors:
+  - state: r1
+    probability: "1/3"
+  - state: r2
+    probability: "1/3"
+  - state: r3
+    probability: "1/3"
+actions:
+  - action: choose-r1
+    deadline: 2
+    cash: 0
+  - action: choose-r2
+    deadline: 2
+    cash: 0
+  - action: choose-r3
+    deadline: 2
+    cash: 0
+  - action: decline
+    deadline: null
+    cash: 0
+payoffs:
+  - action: choose-r1
+    state: r1
+    value: 90
+  - action: choose-r1
+    state: r2
+    value: -30
+  - action: choose-r1
+    state: r3
+    value: -30
+  - action: choose-r2
+    state: r1
+    value: -30
+  - action: choose-r2
+    state: r2
+    value: 90
+  - action: choose-r2
+    state: r3
+    value: -30
+  - action: choose-r3
+    state: r1
+    value: -30
+  - action: choose-r3
+    state: r2
+    value: -30
+  - action: choose-r3
+    state: r3
+    value: 90
+  - action: decline
+    state: r1
+    value: 0
+  - action: decline
+    state: r2
+    value: 0
+  - action: decline
+    state: r3
+    value: 0
+studies:
+  - study: exact-fast
+    fee: 12
+    duration: 1
+    likelihoods:
+      - state: r1
+        report: left
+        probability: 1
+      - state: r1
+        report: right
+        probability: 0
+      - state: r1
+        report: balance
+        probability: 0
+      - state: r2
+        report: left
+        probability: 0
+      - state: r2
+        report: right
+        probability: 1
+      - state: r2
+        report: balance
+        probability: 0
+      - state: r3
+        report: left
+        probability: 0
+      - state: r3
+        report: right
+        probability: 0
+      - state: r3
+        report: balance
+        probability: 1
+  - study: binary-fast
+    fee: 6
+    duration: 1
+    likelihoods:
+      - state: r1
+        report: left
+        probability: 1
+      - state: r1
+        report: balance
+        probability: 0
+      - state: r2
+        report: left
+        probability: 0
+      - state: r2
+        report: balance
+        probability: 1
+      - state: r3
+        report: left
+        probability: 0
+      - state: r3
+        report: balance
+        probability: 1
+  - study: noisy-fast
+    fee: 4
+    duration: 1
+    likelihoods:
+      - state: r1
+        report: left
+        probability: "4/5"
+      - state: r1
+        report: right
+        probability: "1/10"
+      - state: r1
+        report: balance
+        probability: "1/10"
+      - state: r2
+        report: left
+        probability: "1/10"
+      - state: r2
+        report: right
+        probability: "4/5"
+      - state: r2
+        report: balance
+        probability: "1/10"
+      - state: r3
+        report: left
+        probability: "1/10"
+      - state: r3
+        report: right
+        probability: "1/10"
+      - state: r3
+        report: balance
+        probability: "4/5"
+  - study: dropout-fast
+    fee: 12
+    duration: 1
+    likelihoods:
+      - state: r1
+        report: left
+        probability: "9/10"
+      - state: r1
+        report: right
+        probability: 0
+      - state: r1
+        report: balance
+        probability: 0
+      - state: r1
+        report: no-report
+        probability: "1/10"
+      - state: r2
+        report: left
+        probability: 0
+      - state: r2
+        report: right
+        probability: "9/10"
+      - state: r2
+        report: balance
+        probability: 0
+      - state: r2
+        report: no-report
+        probability: "1/10"
+      - state: r3
+        report: left
+        probability: 0
+      - state: r3
+        report: right
+        probability: 0
+      - state: r3
+        report: balance
+        probability: "9/10"
+      - state: r3
+        report: no-report
+        probability: "1/10"
+  - study: exact-slow
+    fee: 5
+    duration: 3
+    likelihoods:
+      - state: r1
+        report: left
+        probability: 1
+      - state: r1
+        report: right
+        probability: 0
+      - state: r1
+        report: balance
+        probability: 0
+      - state: r2
+        report: left
+        probability: 0
+      - state: r2
+        report: right
+        probability: 1
+      - state: r2
+        report: balance
+        probability: 0
+      - state: r3
+        report: left
+        probability: 0
+      - state: r3
+        report: right
+        probability: 0
+      - state: r3
+        report: balance
+        probability: 1
+acceptedFacts:
+  - id: E3-BAG
+    attribute: containingBag
+    value: red
+    source: "REVIEW-E3: supplied upstream evidence finding, not newly measured here"
+sensitivity:
+  - id: bag-only
+    label: Reward the containing bag rather than exact identity
+    payoffs:
+      - action: choose-r1
+        state: r1
+        value: 90
+      - action: choose-r1
+        state: r2
+        value: 90
+      - action: choose-r1
+        state: r3
+        value: 90
+      - action: choose-r2
+        state: r1
+        value: 90
+      - action: choose-r2
+        state: r2
+        value: 90
+      - action: choose-r2
+        state: r3
+        value: 90
+      - action: choose-r3
+        state: r1
+        value: 90
+      - action: choose-r3
+        state: r2
+        value: 90
+      - action: choose-r3
+        state: r3
+        value: 90
+      - action: decline
+        state: r1
+        value: 0
+      - action: decline
+        state: r2
+        value: 0
+      - action: decline
+        state: r3
+        value: 0
+  - id: concentrated-prior
+    label: Assess r1 at 95 percent before buying a study
+    priors:
+      - state: r1
+        probability: "19/20"
+      - state: r2
+        probability: "1/40"
+      - state: r3
+        probability: "1/40"
+  - id: exact-fast-price-tie
+    label: Raise certified fast fee to 20
+    fees:
+      - study: exact-fast
+        fee: 20
+records:
+  inventory:
+    - id: r1
+      bag: red
+      scope: N1
+    - id: r2
+      bag: red
+      scope: N1
+    - id: r3
+      bag: red
+      scope: N1
+    - id: b1
+      bag: blue
+      scope: N1
+    - id: b2
+      bag: blue
+      scope: N1
+    - id: b3
+      bag: blue
+      scope: N1
+    - id: g1
+      bag: gold
+      scope: N1
+    - id: g2
+      bag: gold
+      scope: N1
+    - id: g3
+      bag: gold
+      scope: N1
+  historicalReport:
+    - id: O1
+      setup: "W0:red-left/blue-right"
+      reported: left
+      source: "What Is a Question Worth?; hypothetical E3 record"
+    - id: O2
+      setup: "W0:red-left/blue-right"
+      reported: right
+      source: "What Is a Question Worth?; hypothetical E3 record"
+    - id: O3
+      setup: "W0:red-left/blue-right"
+      reported: left
+      source: "What Is a Question Worth?; hypothetical E3 record"
+  basisReview:
+    - id: REVIEW-E3
+      source: "Review marble evidence; separate evidence-review/1 example"
+      assumptions: "Exactly one heavy marble; fixed bags; equal normal masses; at most one wrong report globally in E3."
+      conclusion: "Reviewed admitted identities r1,r2,r3; containing bag red; exact identity unresolved."
+      status: "Supplied teaching premise; historical constraints are not executed by this app."
+  source:
+    - id: MARBLE-PAPER
+      label: "What Is a Question Worth?"
+      file: marble-learning-paper
+      coverage: Hypothetical teaching example
+      snapshot: E3
+  decisionAssumption:
+    - id: P-MARBLE
+      label: Current state distribution
+      source: MARBLE-PAPER
+      meaning: "Positive assessed weights 1/3 each, separate from logical admissibility."
+    - id: CHANNEL-MARBLE
+      label: Prospective service performance
+      source: MARBLE-PAPER
+      meaning: "Exact, binary, noisy and independent-dropout likelihoods are stipulated; no empirical certification is claimed."
+    - id: PAYOFF-MARBLE
+      label: Consequences and decision horizon
+      source: MARBLE-PAPER
+      meaning: "One owner maximizes risk-neutral hypothetical monetary payoff; selection expires at Day 2."
+

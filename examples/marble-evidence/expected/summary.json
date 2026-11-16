@@ -1,0 +1,33 @@
+{
+  "description": "Example verification summary only; not a complete RunBundle or report.",
+  "format": "decision-lab-run/1",
+  "execution": "completed",
+  "assessment": "complete",
+  "pattern": "evidence-review/1",
+  "viewIds": [
+    "explanations:overview",
+    "explanations:reference",
+    "explanations:remaining:heavy-marble-possibility",
+    "explanations:remaining:weighing-results",
+    "explanations:ruled-out",
+    "findings:bag-identification",
+    "findings:marble-identification",
+    "record:changes",
+    "record:checks",
+    "record:information"
+  ],
+  "materialized": true,
+  "allRetainedContexts": true,
+  "answers": [
+    {
+      "id": "containing-bag",
+      "status": "established",
+      "answer": "red"
+    },
+    {
+      "id": "heavy-marble",
+      "status": "underdetermined",
+      "answer": null
+    }
+  ]
+}
